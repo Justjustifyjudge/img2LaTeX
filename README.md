@@ -1,4 +1,3 @@
-![图片](https://github.com/Justjustifyjudge/img2LaTeX/assets/117241737/5980e23c-9ac8-4275-98cc-2647db4b64dc)
 # img2LaTeX
 ## 构建模型
 参考了GitHub用户kingyiusuen的代码仓库image-to-latex
