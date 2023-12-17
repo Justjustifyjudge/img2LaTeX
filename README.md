@@ -20,7 +20,7 @@
 
 （图源：Singh, Sumeet S. and Sergey Karayev. “Full Page Handwriting Recognition via Image to Sequence Extraction.” ArXiv abs/2103.06450 (2021): n. pag.）
 
-###模型优化
+### 模型优化
 优化方面主要探究了ResNet层数对于预测结果的影响，以及探索了Beam-search和长句惩罚对于预测结果的优化。
 Pytorch的官方代码中提供了五种不同深度结构的ResNet神经网络，分别为18、34、50、101、152层。
 
@@ -50,8 +50,11 @@ ResNet50的测试结果相较于ResNet34又有一点点提高，但是提高的�
 
 同时我们对模型使用的predict函数进行了两方面的优化尝试：
 原版本的参考代码对于预测时没有任何优化的，是直接使用decode函数然后挑选其中逻辑概率最高的结果返回。我们考虑到
+
 A.每次都搜索概率最高的情况，可能会掉入局部最优的陷阱；
+
 B.由于少量长句我们必须将超参数的max_len调大来防止输入时的张量溢出，而在进行预测时绝大部分的预测结果理想情况下都应该为中句或者短句，因此有必要引入长度惩罚的机制。我们尝试了以下两种方法，其中beam_search并没有取得优化的结果。
+
 A.使用beam-search来一定程度上避免掉入局部最优解的情况。代码如下：
 
 ```Python
