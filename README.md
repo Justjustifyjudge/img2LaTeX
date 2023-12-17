@@ -1,7 +1,7 @@
 # img2LaTeX
 ## 构建模型
 参考了GitHub用户kingyiusuen的代码仓库image-to-latex
-###使用的模型的backbone是ResNet+Transformer。其结构图如下：
+### 使用的模型的backbone是ResNet+Transformer。其结构图如下：
 
 ![图片](https://github.com/Justjustifyjudge/img2LaTeX/assets/117241737/70fa91a9-6d44-4e62-883a-4b2244441047)
 
